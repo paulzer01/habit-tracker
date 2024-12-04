@@ -21,6 +21,10 @@ jobs:
           ruby-version: 3.3.0
           bundler-cache: true
 
+      - name: Install dependencies
+        working-directory: habit-tracker-be
+        run: bundle install --jobs 4 --retry 3
+
       - name: Scan for Rails security vulnerabilities
         working-directory: habit-tracker-be
         run: bin/brakeman --no-pager
@@ -38,6 +42,10 @@ jobs:
         with:
           ruby-version: 3.3.0
           bundler-cache: true
+
+      - name: Install dependencies
+        working-directory: habit-tracker-be
+        run: bundle install --jobs 4 --retry 3
 
       - name: Run RuboCop for code style
         working-directory: habit-tracker-be
@@ -79,6 +87,10 @@ jobs:
         with:
           ruby-version: 3.3.0
           bundler-cache: true
+
+      - name: Install dependencies
+        working-directory: habit-tracker-be
+        run: bundle install --jobs 4 --retry 3
 
       - name: Prepare test database
         working-directory: habit-tracker-be
