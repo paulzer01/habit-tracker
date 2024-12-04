@@ -15,16 +15,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Navigate to backend
-        run: cd habit-tracker-be
-
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: .ruby-version
+          ruby-version: habit-tracker-be/.ruby-version
           bundler-cache: true
 
       - name: Scan for Rails security vulnerabilities
+        working-directory: habit-tracker-be
         run: bin/brakeman --no-pager
 
   lint:
@@ -35,16 +33,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Navigate to backend
-        run: cd habit-tracker-be
-
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: .ruby-version
+          ruby-version: habit-tracker-be/.ruby-version
           bundler-cache: true
 
       - name: Run RuboCop for code style
+        working-directory: habit-tracker-be
         run: bin/rubocop -f github
 
   test:
@@ -78,22 +74,21 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Navigate to backend
-        run: cd habit-tracker-be
-
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: .ruby-version
+          ruby-version: habit-tracker-be/.ruby-version
           bundler-cache: true
 
       - name: Prepare test database
+        working-directory: habit-tracker-be
         env:
           RAILS_ENV: test
           DATABASE_URL: postgres://postgres:postgres@localhost:5432
         run: bin/rails db:create db:schema:load
 
       - name: Run tests
+        working-directory: habit-tracker-be
         env:
           RAILS_ENV: test
           DATABASE_URL: postgres://postgres:postgres@localhost:5432
