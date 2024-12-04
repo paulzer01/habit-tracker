@@ -18,7 +18,7 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: habit-tracker-be/.ruby-version
+          ruby-version: 3.3.0
           bundler-cache: true
 
       - name: Scan for Rails security vulnerabilities
@@ -36,7 +36,7 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: habit-tracker-be/.ruby-version
+          ruby-version: 3.3.0
           bundler-cache: true
 
       - name: Run RuboCop for code style
@@ -77,7 +77,7 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: habit-tracker-be/.ruby-version
+          ruby-version: 3.3.0
           bundler-cache: true
 
       - name: Prepare test database
