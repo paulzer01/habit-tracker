@@ -1,0 +1,39 @@
+# Rails Backend
+/habit-tracker-be/.bundle
+/habit-tracker-be/.env*
+/habit-tracker-be/log/*
+/habit-tracker-be/tmp/*
+!/habit-tracker-be/log/.keep
+!/habit-tracker-be/tmp/.keep
+/habit-tracker-be/tmp/pids/*
+!/habit-tracker-be/tmp/pids/
+!/habit-tracker-be/tmp/pids/.keep
+/habit-tracker-be/storage/*
+!/habit-tracker-be/storage/.keep
+/habit-tracker-be/tmp/storage/*
+!/habit-tracker-be/tmp/storage/
+!/habit-tracker-be/tmp/storage/.keep
+/habit-tracker-be/config/master.key
+
+# Next.js Frontend
+/habit-tracker-fe/node_modules
+/habit-tracker-fe/.pnp
+/habit-tracker-fe/.pnp.*
+/habit-tracker-fe/.yarn/*
+!/habit-tracker-fe/.yarn/patches
+!/habit-tracker-fe/.yarn/plugins
+!/habit-tracker-fe/.yarn/releases
+!/habit-tracker-fe/.yarn/versions
+/habit-tracker-fe/coverage
+/habit-tracker-fe/.next/
+/habit-tracker-fe/out/
+/habit-tracker-fe/build
+/habit-tracker-fe/.env*
+/habit-tracker-fe/.vercel
+/habit-tracker-fe/*.tsbuildinfo
+/habit-tracker-fe/next-env.d.ts
+
+# General
+.DS_Store
+*.pem
+*.log
